@@ -197,7 +197,7 @@ func updateStock(id int64, stock models.Stock) int64 {
 
 	sqlStatement := `UPDATE stockdb.stocks SET name=$2, price=$3, company=$4 WHERE stocksid=$1`
 
-	res, err := db.Exec(sqlStatement, id, stock.StockId, stock.Name, stock.Price, stock.Company)
+	res, err := db.Exec(sqlStatement, id, stock.Name, stock.Price, stock.Company)
 	if err != nil {
 		log.Fatalf("Unable to execute the Query: %v", err)
 	}
@@ -212,13 +212,13 @@ func updateStock(id int64, stock models.Stock) int64 {
 func deleteStock(id int64) (int64, error) {
 
 	db := createConnection()
-	db.Close()
+	defer db.Close()
 
 	sqlStatement := `DELETE FROM stockdb.stocks WHERE stocksid=$1`
 
 	res, err := db.Exec(sqlStatement, id)
 	if err != nil {
-		log.Fatalf("Unable to execute the Query: %v", err)
+		return 0, fmt.Errorf("error deleting stock: %w", err)
 	}
 
 	affectedRows, err := res.RowsAffected()
