@@ -90,3 +90,11 @@ Requests should be sent in JSON format. Responses are also in JSON format
 }
 ```
 
+### Postman 
+
+![Pasted image](https://github.com/Shreyank031/go-postgres/assets/115367978/7049a638-5a48-496b-8c0c-93efcf30e6bf)
+
+### Postgres running in my local machine
+
+![Pasted image (2)](https://github.com/Shreyank031/go-postgres/assets/115367978/11c44a61-8bd8-43e3-921d-1e5ae6746c0e)
+
