@@ -1,6 +1,6 @@
 # Stock Management API
 
-This is a Go application for managing stocks in a PostgreSQL database. It provides functionalities to Create, Read, Update, and Delete (CRUD) stock entries through a RESTful API.
+This is a Go application for managing stocks in a PostgreSQL database. It provides functionalities to Create, Read, Update, and Delete (CRUD) stock entries through a RESTful API. This time I have not used Gorm so that I can get in-depth knowledge of whats happening under the hood.
 
 ## Features:
 
